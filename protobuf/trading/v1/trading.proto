@@ -9,61 +9,68 @@ enum Status {
   STATUS_ACTIVE = 1;
   STATUS_PASSED = 2;
   STATUS_FAILED = 3;
-  STATUS_RISK_STOP = 4;
+  STATUS_EXPIRED = 4;
+  STATUS_INACTIVE = 5;
 }
 
-enum Reason {
-  REASON_UNSPECIFIED = 0;
-  REASON_DAILY_LOSS = 1;
-  REASON_MAX_LOSS = 2;
-  REASON_TARGET = 3;
-  REASON_MANUAL = 4;
-  REASON_SL = 5;
-  REASON_TP = 6;
-  REASON_STOP_OUT = 7;
+message Account {
+  uint32 id = 1;
+  Status status = 2;
+  string reason = 3;
+  sint64 balance = 4;
+  int64 initial = 5;
+  uint32 leverage = 6;
+  int64 expires_ms = 7;
+  uint32 days = 8;
+  uint32 min_days = 9;
+  uint32 daily_limit_bps = 10;
+  uint32 total_limit_bps = 11;
+  uint32 target_bps = 12;
+  bool trailing = 13;
+  bool prop = 14;
+}
+
+message Metrics {
+  sint64 equity = 1;
+  sint64 margin = 2;
+  int32 dd_bps = 3;
+  int32 daily_bps = 4;
+  sint32 profit_bps = 5;
 }
 
 message Position {
   uint64 id = 1;
   uint32 symbol_id = 2;
   bool buy = 3;
-  int64 lots = 4;
+  double lots = 4;
   int64 open = 5;
   int64 sl = 6;
   int64 tp = 7;
   int64 open_ms = 8;
-  int32 risk_bps = 9;
+  double mult = 9;
+  sint64 swap = 10;
+  sint64 commission = 11;
+  int32 risk_bps = 12;
 }
 
-message Closed {
+message Order {
   uint64 id = 1;
-  int64 close = 2;
-  int64 profit = 3;
-  int64 close_ms = 4;
-  Reason reason = 5;
-}
-
-message Account {
-  uint64 id = 1;
-  Status status = 2;
-  Reason reason = 3;
-  int64 balance = 4;
-  int64 equity = 5;
-  int64 margin = 6;
-  int32 risk_bps = 7;
-  int32 daily_dd_bps = 8;
-  int32 daily_limit_bps = 9;
-  int32 total_dd_bps = 10;
-  int32 total_limit_bps = 11;
-  int32 profit_bps = 12;
-  int32 target_bps = 13;
+  uint32 symbol_id = 2;
+  bool buy = 3;
+  uint32 type = 4;
+  double lots = 5;
+  int64 price = 6;
+  int64 sl = 7;
+  int64 tp = 8;
+  int64 created_ms = 9;
 }
 
 message Event {
   uint64 seq = 1;
   int64 ts_ms = 2;
-  Account account = 3;
-  repeated Position upsert = 4;
-  repeated Closed closed = 5;
-  bool snapshot = 6;
+  bool snapshot = 3;
+  Account account = 4;
+  Metrics metrics = 5;
+  repeated Position positions = 6;
+  repeated Order orders = 7;
 }

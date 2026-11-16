@@ -10,7 +10,126 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file trading/v1/trading.proto.
  */
 export const file_trading_v1_trading: GenFile = /*@__PURE__*/
-  fileDesc("Chh0cmFkaW5nL3YxL3RyYWRpbmcucHJvdG8SCnRyYWRpbmcudjEijQEKCFBvc2l0aW9uEgoKAmlkGAEgASgEEhEKCXN5bWJvbF9pZBgCIAEoDRILCgNidXkYAyABKAgSDAoEbG90cxgEIAEoAxIMCgRvcGVuGAUgASgDEgoKAnNsGAYgASgDEgoKAnRwGAcgASgDEg8KB29wZW5fbXMYCCABKAMSEAoIcmlza19icHMYCSABKAUiaQoGQ2xvc2VkEgoKAmlkGAEgASgEEg0KBWNsb3NlGAIgASgDEg4KBnByb2ZpdBgDIAEoAxIQCghjbG9zZV9tcxgEIAEoAxIiCgZyZWFzb24YBSABKA4yEi50cmFkaW5nLnYxLlJlYXNvbiKmAgoHQWNjb3VudBIKCgJpZBgBIAEoBBIiCgZzdGF0dXMYAiABKA4yEi50cmFkaW5nLnYxLlN0YXR1cxIiCgZyZWFzb24YAyABKA4yEi50cmFkaW5nLnYxLlJlYXNvbhIPCgdiYWxhbmNlGAQgASgDEg4KBmVxdWl0eRgFIAEoAxIOCgZtYXJnaW4YBiABKAMSEAoIcmlza19icHMYByABKAUSFAoMZGFpbHlfZGRfYnBzGAggASgFEhcKD2RhaWx5X2xpbWl0X2JwcxgJIAEoBRIUCgx0b3RhbF9kZF9icHMYCiABKAUSFwoPdG90YWxfbGltaXRfYnBzGAsgASgFEhIKCnByb2ZpdF9icHMYDCABKAUSEgoKdGFyZ2V0X2JwcxgNIAEoBSKlAQoFRXZlbnQSCwoDc2VxGAEgASgEEg0KBXRzX21zGAIgASgDEiQKB2FjY291bnQYAyABKAsyEy50cmFkaW5nLnYxLkFjY291bnQSJAoGdXBzZXJ0GAQgAygLMhQudHJhZGluZy52MS5Qb3NpdGlvbhIiCgZjbG9zZWQYBSADKAsyEi50cmFkaW5nLnYxLkNsb3NlZBIQCghzbmFwc2hvdBgGIAEoCCpvCgZTdGF0dXMSFgoSU1RBVFVTX1VOU1BFQ0lGSUVEEAASEQoNU1RBVFVTX0FDVElWRRABEhEKDVNUQVRVU19QQVNTRUQQAhIRCg1TVEFUVVNfRkFJTEVEEAMSFAoQU1RBVFVTX1JJU0tfU1RPUBAEKqUBCgZSZWFzb24SFgoSUkVBU09OX1VOU1BFQ0lGSUVEEAASFQoRUkVBU09OX0RBSUxZX0xPU1MQARITCg9SRUFTT05fTUFYX0xPU1MQAhIRCg1SRUFTT05fVEFSR0VUEAMSEQoNUkVBU09OX01BTlVBTBAEEg0KCVJFQVNPTl9TTBAFEg0KCVJFQVNPTl9UUBAGEhMKD1JFQVNPTl9TVE9QX09VVBAHQkNaQWdpdGh1Yi5jb20vZnVuZGJlc3QvZnVuZGJlc3QtcHJvdG9idWYvZ2VuL2dvL3RyYWRpbmcvdjE7dHJhZGluZ3YxYgZwcm90bzM");
+  fileDesc("Chh0cmFkaW5nL3YxL3RyYWRpbmcucHJvdG8SCnRyYWRpbmcudjEilwIKB0FjY291bnQSCgoCaWQYASABKA0SIgoGc3RhdHVzGAIgASgOMhIudHJhZGluZy52MS5TdGF0dXMSDgoGcmVhc29uGAMgASgJEg8KB2JhbGFuY2UYBCABKBISDwoHaW5pdGlhbBgFIAEoAxIQCghsZXZlcmFnZRgGIAEoDRISCgpleHBpcmVzX21zGAcgASgDEgwKBGRheXMYCCABKA0SEAoIbWluX2RheXMYCSABKA0SFwoPZGFpbHlfbGltaXRfYnBzGAogASgNEhcKD3RvdGFsX2xpbWl0X2JwcxgLIAEoDRISCgp0YXJnZXRfYnBzGAwgASgNEhAKCHRyYWlsaW5nGA0gASgIEgwKBHByb3AYDiABKAgiYAoHTWV0cmljcxIOCgZlcXVpdHkYASABKBISDgoGbWFyZ2luGAIgASgSEg4KBmRkX2JwcxgDIAEoBRIRCglkYWlseV9icHMYBCABKAUSEgoKcHJvZml0X2JwcxgFIAEoESK9AQoIUG9zaXRpb24SCgoCaWQYASABKAQSEQoJc3ltYm9sX2lkGAIgASgNEgsKA2J1eRgDIAEoCBIMCgRsb3RzGAQgASgBEgwKBG9wZW4YBSABKAMSCgoCc2wYBiABKAMSCgoCdHAYByABKAMSDwoHb3Blbl9tcxgIIAEoAxIMCgRtdWx0GAkgASgBEgwKBHN3YXAYCiABKBISEgoKY29tbWlzc2lvbhgLIAEoEhIQCghyaXNrX2JwcxgMIAEoBSKKAQoFT3JkZXISCgoCaWQYASABKAQSEQoJc3ltYm9sX2lkGAIgASgNEgsKA2J1eRgDIAEoCBIMCgR0eXBlGAQgASgNEgwKBGxvdHMYBSABKAESDQoFcHJpY2UYBiABKAMSCgoCc2wYByABKAMSCgoCdHAYCCABKAMSEgoKY3JlYXRlZF9tcxgJIAEoAyLNAQoFRXZlbnQSCwoDc2VxGAEgASgEEg0KBXRzX21zGAIgASgDEhAKCHNuYXBzaG90GAMgASgIEiQKB2FjY291bnQYBCABKAsyEy50cmFkaW5nLnYxLkFjY291bnQSJAoHbWV0cmljcxgFIAEoCzITLnRyYWRpbmcudjEuTWV0cmljcxInCglwb3NpdGlvbnMYBiADKAsyFC50cmFkaW5nLnYxLlBvc2l0aW9uEiEKBm9yZGVycxgHIAMoCzIRLnRyYWRpbmcudjEuT3JkZXIqggEKBlN0YXR1cxIWChJTVEFUVVNfVU5TUEVDSUZJRUQQABIRCg1TVEFUVVNfQUNUSVZFEAESEQoNU1RBVFVTX1BBU1NFRBACEhEKDVNUQVRVU19GQUlMRUQQAxISCg5TVEFUVVNfRVhQSVJFRBAEEhMKD1NUQVRVU19JTkFDVElWRRAFQkNaQWdpdGh1Yi5jb20vZnVuZGJlc3QvZnVuZGJlc3QtcHJvdG9idWYvZ2VuL2dvL3RyYWRpbmcvdjE7dHJhZGluZ3YxYgZwcm90bzM");
+
+/**
+ * @generated from message trading.v1.Account
+ */
+export type Account = Message<"trading.v1.Account"> & {
+  /**
+   * @generated from field: uint32 id = 1;
+   */
+  id: number;
+
+  /**
+   * @generated from field: trading.v1.Status status = 2;
+   */
+  status: Status;
+
+  /**
+   * @generated from field: string reason = 3;
+   */
+  reason: string;
+
+  /**
+   * @generated from field: sint64 balance = 4;
+   */
+  balance: bigint;
+
+  /**
+   * @generated from field: int64 initial = 5;
+   */
+  initial: bigint;
+
+  /**
+   * @generated from field: uint32 leverage = 6;
+   */
+  leverage: number;
+
+  /**
+   * @generated from field: int64 expires_ms = 7;
+   */
+  expiresMs: bigint;
+
+  /**
+   * @generated from field: uint32 days = 8;
+   */
+  days: number;
+
+  /**
+   * @generated from field: uint32 min_days = 9;
+   */
+  minDays: number;
+
+  /**
+   * @generated from field: uint32 daily_limit_bps = 10;
+   */
+  dailyLimitBps: number;
+
+  /**
+   * @generated from field: uint32 total_limit_bps = 11;
+   */
+  totalLimitBps: number;
+
+  /**
+   * @generated from field: uint32 target_bps = 12;
+   */
+  targetBps: number;
+
+  /**
+   * @generated from field: bool trailing = 13;
+   */
+  trailing: boolean;
+
+  /**
+   * @generated from field: bool prop = 14;
+   */
+  prop: boolean;
+};
+
+/**
+ * Describes the message trading.v1.Account.
+ * Use `create(AccountSchema)` to create a new message.
+ */
+export const AccountSchema: GenMessage<Account> = /*@__PURE__*/
+  messageDesc(file_trading_v1_trading, 0);
+
+/**
+ * @generated from message trading.v1.Metrics
+ */
+export type Metrics = Message<"trading.v1.Metrics"> & {
+  /**
+   * @generated from field: sint64 equity = 1;
+   */
+  equity: bigint;
+
+  /**
+   * @generated from field: sint64 margin = 2;
+   */
+  margin: bigint;
+
+  /**
+   * @generated from field: int32 dd_bps = 3;
+   */
+  ddBps: number;
+
+  /**
+   * @generated from field: int32 daily_bps = 4;
+   */
+  dailyBps: number;
+
+  /**
+   * @generated from field: sint32 profit_bps = 5;
+   */
+  profitBps: number;
+};
+
+/**
+ * Describes the message trading.v1.Metrics.
+ * Use `create(MetricsSchema)` to create a new message.
+ */
+export const MetricsSchema: GenMessage<Metrics> = /*@__PURE__*/
+  messageDesc(file_trading_v1_trading, 1);
 
 /**
  * @generated from message trading.v1.Position
@@ -32,9 +151,9 @@ export type Position = Message<"trading.v1.Position"> & {
   buy: boolean;
 
   /**
-   * @generated from field: int64 lots = 4;
+   * @generated from field: double lots = 4;
    */
-  lots: bigint;
+  lots: number;
 
   /**
    * @generated from field: int64 open = 5;
@@ -57,7 +176,22 @@ export type Position = Message<"trading.v1.Position"> & {
   openMs: bigint;
 
   /**
-   * @generated from field: int32 risk_bps = 9;
+   * @generated from field: double mult = 9;
+   */
+  mult: number;
+
+  /**
+   * @generated from field: sint64 swap = 10;
+   */
+  swap: bigint;
+
+  /**
+   * @generated from field: sint64 commission = 11;
+   */
+  commission: bigint;
+
+  /**
+   * @generated from field: int32 risk_bps = 12;
    */
   riskBps: number;
 };
@@ -67,121 +201,64 @@ export type Position = Message<"trading.v1.Position"> & {
  * Use `create(PositionSchema)` to create a new message.
  */
 export const PositionSchema: GenMessage<Position> = /*@__PURE__*/
-  messageDesc(file_trading_v1_trading, 0);
-
-/**
- * @generated from message trading.v1.Closed
- */
-export type Closed = Message<"trading.v1.Closed"> & {
-  /**
-   * @generated from field: uint64 id = 1;
-   */
-  id: bigint;
-
-  /**
-   * @generated from field: int64 close = 2;
-   */
-  close: bigint;
-
-  /**
-   * @generated from field: int64 profit = 3;
-   */
-  profit: bigint;
-
-  /**
-   * @generated from field: int64 close_ms = 4;
-   */
-  closeMs: bigint;
-
-  /**
-   * @generated from field: trading.v1.Reason reason = 5;
-   */
-  reason: Reason;
-};
-
-/**
- * Describes the message trading.v1.Closed.
- * Use `create(ClosedSchema)` to create a new message.
- */
-export const ClosedSchema: GenMessage<Closed> = /*@__PURE__*/
-  messageDesc(file_trading_v1_trading, 1);
-
-/**
- * @generated from message trading.v1.Account
- */
-export type Account = Message<"trading.v1.Account"> & {
-  /**
-   * @generated from field: uint64 id = 1;
-   */
-  id: bigint;
-
-  /**
-   * @generated from field: trading.v1.Status status = 2;
-   */
-  status: Status;
-
-  /**
-   * @generated from field: trading.v1.Reason reason = 3;
-   */
-  reason: Reason;
-
-  /**
-   * @generated from field: int64 balance = 4;
-   */
-  balance: bigint;
-
-  /**
-   * @generated from field: int64 equity = 5;
-   */
-  equity: bigint;
-
-  /**
-   * @generated from field: int64 margin = 6;
-   */
-  margin: bigint;
-
-  /**
-   * @generated from field: int32 risk_bps = 7;
-   */
-  riskBps: number;
-
-  /**
-   * @generated from field: int32 daily_dd_bps = 8;
-   */
-  dailyDdBps: number;
-
-  /**
-   * @generated from field: int32 daily_limit_bps = 9;
-   */
-  dailyLimitBps: number;
-
-  /**
-   * @generated from field: int32 total_dd_bps = 10;
-   */
-  totalDdBps: number;
-
-  /**
-   * @generated from field: int32 total_limit_bps = 11;
-   */
-  totalLimitBps: number;
-
-  /**
-   * @generated from field: int32 profit_bps = 12;
-   */
-  profitBps: number;
-
-  /**
-   * @generated from field: int32 target_bps = 13;
-   */
-  targetBps: number;
-};
-
-/**
- * Describes the message trading.v1.Account.
- * Use `create(AccountSchema)` to create a new message.
- */
-export const AccountSchema: GenMessage<Account> = /*@__PURE__*/
   messageDesc(file_trading_v1_trading, 2);
+
+/**
+ * @generated from message trading.v1.Order
+ */
+export type Order = Message<"trading.v1.Order"> & {
+  /**
+   * @generated from field: uint64 id = 1;
+   */
+  id: bigint;
+
+  /**
+   * @generated from field: uint32 symbol_id = 2;
+   */
+  symbolId: number;
+
+  /**
+   * @generated from field: bool buy = 3;
+   */
+  buy: boolean;
+
+  /**
+   * @generated from field: uint32 type = 4;
+   */
+  type: number;
+
+  /**
+   * @generated from field: double lots = 5;
+   */
+  lots: number;
+
+  /**
+   * @generated from field: int64 price = 6;
+   */
+  price: bigint;
+
+  /**
+   * @generated from field: int64 sl = 7;
+   */
+  sl: bigint;
+
+  /**
+   * @generated from field: int64 tp = 8;
+   */
+  tp: bigint;
+
+  /**
+   * @generated from field: int64 created_ms = 9;
+   */
+  createdMs: bigint;
+};
+
+/**
+ * Describes the message trading.v1.Order.
+ * Use `create(OrderSchema)` to create a new message.
+ */
+export const OrderSchema: GenMessage<Order> = /*@__PURE__*/
+  messageDesc(file_trading_v1_trading, 3);
 
 /**
  * @generated from message trading.v1.Event
@@ -198,24 +275,29 @@ export type Event = Message<"trading.v1.Event"> & {
   tsMs: bigint;
 
   /**
-   * @generated from field: trading.v1.Account account = 3;
+   * @generated from field: bool snapshot = 3;
+   */
+  snapshot: boolean;
+
+  /**
+   * @generated from field: trading.v1.Account account = 4;
    */
   account?: Account;
 
   /**
-   * @generated from field: repeated trading.v1.Position upsert = 4;
+   * @generated from field: trading.v1.Metrics metrics = 5;
    */
-  upsert: Position[];
+  metrics?: Metrics;
 
   /**
-   * @generated from field: repeated trading.v1.Closed closed = 5;
+   * @generated from field: repeated trading.v1.Position positions = 6;
    */
-  closed: Closed[];
+  positions: Position[];
 
   /**
-   * @generated from field: bool snapshot = 6;
+   * @generated from field: repeated trading.v1.Order orders = 7;
    */
-  snapshot: boolean;
+  orders: Order[];
 };
 
 /**
@@ -223,7 +305,7 @@ export type Event = Message<"trading.v1.Event"> & {
  * Use `create(EventSchema)` to create a new message.
  */
 export const EventSchema: GenMessage<Event> = /*@__PURE__*/
-  messageDesc(file_trading_v1_trading, 3);
+  messageDesc(file_trading_v1_trading, 4);
 
 /**
  * @generated from enum trading.v1.Status
@@ -250,9 +332,14 @@ export enum Status {
   FAILED = 3,
 
   /**
-   * @generated from enum value: STATUS_RISK_STOP = 4;
+   * @generated from enum value: STATUS_EXPIRED = 4;
    */
-  RISK_STOP = 4,
+  EXPIRED = 4,
+
+  /**
+   * @generated from enum value: STATUS_INACTIVE = 5;
+   */
+  INACTIVE = 5,
 }
 
 /**
@@ -260,55 +347,4 @@ export enum Status {
  */
 export const StatusSchema: GenEnum<Status> = /*@__PURE__*/
   enumDesc(file_trading_v1_trading, 0);
-
-/**
- * @generated from enum trading.v1.Reason
- */
-export enum Reason {
-  /**
-   * @generated from enum value: REASON_UNSPECIFIED = 0;
-   */
-  UNSPECIFIED = 0,
-
-  /**
-   * @generated from enum value: REASON_DAILY_LOSS = 1;
-   */
-  DAILY_LOSS = 1,
-
-  /**
-   * @generated from enum value: REASON_MAX_LOSS = 2;
-   */
-  MAX_LOSS = 2,
-
-  /**
-   * @generated from enum value: REASON_TARGET = 3;
-   */
-  TARGET = 3,
-
-  /**
-   * @generated from enum value: REASON_MANUAL = 4;
-   */
-  MANUAL = 4,
-
-  /**
-   * @generated from enum value: REASON_SL = 5;
-   */
-  SL = 5,
-
-  /**
-   * @generated from enum value: REASON_TP = 6;
-   */
-  TP = 6,
-
-  /**
-   * @generated from enum value: REASON_STOP_OUT = 7;
-   */
-  STOP_OUT = 7,
-}
-
-/**
- * Describes the enum trading.v1.Reason.
- */
-export const ReasonSchema: GenEnum<Reason> = /*@__PURE__*/
-  enumDesc(file_trading_v1_trading, 1);
 
