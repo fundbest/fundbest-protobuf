@@ -10,7 +10,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file trading/v1/trading.proto.
  */
 export const file_trading_v1_trading: GenFile = /*@__PURE__*/
-  fileDesc("Chh0cmFkaW5nL3YxL3RyYWRpbmcucHJvdG8SCnRyYWRpbmcudjEilwIKB0FjY291bnQSCgoCaWQYASABKA0SIgoGc3RhdHVzGAIgASgOMhIudHJhZGluZy52MS5TdGF0dXMSDgoGcmVhc29uGAMgASgJEg8KB2JhbGFuY2UYBCABKBISDwoHaW5pdGlhbBgFIAEoAxIQCghsZXZlcmFnZRgGIAEoDRISCgpleHBpcmVzX21zGAcgASgDEgwKBGRheXMYCCABKA0SEAoIbWluX2RheXMYCSABKA0SFwoPZGFpbHlfbGltaXRfYnBzGAogASgNEhcKD3RvdGFsX2xpbWl0X2JwcxgLIAEoDRISCgp0YXJnZXRfYnBzGAwgASgNEhAKCHRyYWlsaW5nGA0gASgIEgwKBHByb3AYDiABKAgiYAoHTWV0cmljcxIOCgZlcXVpdHkYASABKBISDgoGbWFyZ2luGAIgASgSEg4KBmRkX2JwcxgDIAEoBRIRCglkYWlseV9icHMYBCABKAUSEgoKcHJvZml0X2JwcxgFIAEoESK9AQoIUG9zaXRpb24SCgoCaWQYASABKAQSEQoJc3ltYm9sX2lkGAIgASgNEgsKA2J1eRgDIAEoCBIMCgRsb3RzGAQgASgBEgwKBG9wZW4YBSABKAMSCgoCc2wYBiABKAMSCgoCdHAYByABKAMSDwoHb3Blbl9tcxgIIAEoAxIMCgRtdWx0GAkgASgBEgwKBHN3YXAYCiABKBISEgoKY29tbWlzc2lvbhgLIAEoEhIQCghyaXNrX2JwcxgMIAEoBSKKAQoFT3JkZXISCgoCaWQYASABKAQSEQoJc3ltYm9sX2lkGAIgASgNEgsKA2J1eRgDIAEoCBIMCgR0eXBlGAQgASgNEgwKBGxvdHMYBSABKAESDQoFcHJpY2UYBiABKAMSCgoCc2wYByABKAMSCgoCdHAYCCABKAMSEgoKY3JlYXRlZF9tcxgJIAEoAyLNAQoFRXZlbnQSCwoDc2VxGAEgASgEEg0KBXRzX21zGAIgASgDEhAKCHNuYXBzaG90GAMgASgIEiQKB2FjY291bnQYBCABKAsyEy50cmFkaW5nLnYxLkFjY291bnQSJAoHbWV0cmljcxgFIAEoCzITLnRyYWRpbmcudjEuTWV0cmljcxInCglwb3NpdGlvbnMYBiADKAsyFC50cmFkaW5nLnYxLlBvc2l0aW9uEiEKBm9yZGVycxgHIAMoCzIRLnRyYWRpbmcudjEuT3JkZXIqggEKBlN0YXR1cxIWChJTVEFUVVNfVU5TUEVDSUZJRUQQABIRCg1TVEFUVVNfQUNUSVZFEAESEQoNU1RBVFVTX1BBU1NFRBACEhEKDVNUQVRVU19GQUlMRUQQAxISCg5TVEFUVVNfRVhQSVJFRBAEEhMKD1NUQVRVU19JTkFDVElWRRAFQkNaQWdpdGh1Yi5jb20vZnVuZGJlc3QvZnVuZGJlc3QtcHJvdG9idWYvZ2VuL2dvL3RyYWRpbmcvdjE7dHJhZGluZ3YxYgZwcm90bzM");
+  fileDesc("Chh0cmFkaW5nL3YxL3RyYWRpbmcucHJvdG8SCnRyYWRpbmcudjEilwIKB0FjY291bnQSCgoCaWQYASABKA0SIgoGc3RhdHVzGAIgASgOMhIudHJhZGluZy52MS5TdGF0dXMSDgoGcmVhc29uGAMgASgJEg8KB2JhbGFuY2UYBCABKBISDwoHaW5pdGlhbBgFIAEoAxIQCghsZXZlcmFnZRgGIAEoDRISCgpleHBpcmVzX21zGAcgASgDEgwKBGRheXMYCCABKA0SEAoIbWluX2RheXMYCSABKA0SFwoPZGFpbHlfbGltaXRfYnBzGAogASgNEhcKD3RvdGFsX2xpbWl0X2JwcxgLIAEoDRISCgp0YXJnZXRfYnBzGAwgASgNEhAKCHRyYWlsaW5nGA0gASgIEgwKBHByb3AYDiABKAgiYAoHTWV0cmljcxIOCgZlcXVpdHkYASABKBISDgoGbWFyZ2luGAIgASgSEg4KBmRkX2JwcxgDIAEoBRIRCglkYWlseV9icHMYBCABKAUSEgoKcHJvZml0X2JwcxgFIAEoESLNAQoIUG9zaXRpb24SCgoCaWQYASABKAQSEQoJc3ltYm9sX2lkGAIgASgNEgsKA2J1eRgDIAEoCBIMCgRsb3RzGAQgASgBEgwKBG9wZW4YBSABKAMSCgoCc2wYBiABKAMSCgoCdHAYByABKAMSDwoHb3Blbl9tcxgIIAEoAxIMCgRtdWx0GAkgASgBEgwKBHN3YXAYCiABKBISEgoKY29tbWlzc2lvbhgLIAEoEhIQCghyaXNrX2JwcxgMIAEoBRIOCgZzeW1ib2wYDSABKAkimgEKBU9yZGVyEgoKAmlkGAEgASgEEhEKCXN5bWJvbF9pZBgCIAEoDRILCgNidXkYAyABKAgSDAoEdHlwZRgEIAEoDRIMCgRsb3RzGAUgASgBEg0KBXByaWNlGAYgASgDEgoKAnNsGAcgASgDEgoKAnRwGAggASgDEhIKCmNyZWF0ZWRfbXMYCSABKAMSDgoGc3ltYm9sGAogASgJIoUCCgVFdmVudBILCgNzZXEYASABKAQSDQoFdHNfbXMYAiABKAMSEAoIc25hcHNob3QYAyABKAgSJAoHYWNjb3VudBgEIAEoCzITLnRyYWRpbmcudjEuQWNjb3VudBIkCgdtZXRyaWNzGAUgASgLMhMudHJhZGluZy52MS5NZXRyaWNzEicKCXBvc2l0aW9ucxgGIAMoCzIULnRyYWRpbmcudjEuUG9zaXRpb24SIQoGb3JkZXJzGAcgAygLMhEudHJhZGluZy52MS5PcmRlchIiCgZjbG9zZWQYCCADKAsyEi50cmFkaW5nLnYxLkNsb3NlZBISCgphY2NvdW50X2lkGAkgASgNIlUKBkNsb3NlZBIKCgJpZBgBIAEoBBINCgVjbG9zZRgCIAEoAxIOCgZwcm9maXQYAyABKBISEAoIY2xvc2VfbXMYBCABKAMSDgoGcmVhc29uGAUgASgNKoIBCgZTdGF0dXMSFgoSU1RBVFVTX1VOU1BFQ0lGSUVEEAASEQoNU1RBVFVTX0FDVElWRRABEhEKDVNUQVRVU19QQVNTRUQQAhIRCg1TVEFUVVNfRkFJTEVEEAMSEgoOU1RBVFVTX0VYUElSRUQQBBITCg9TVEFUVVNfSU5BQ1RJVkUQBUJDWkFnaXRodWIuY29tL2Z1bmRiZXN0L2Z1bmRiZXN0LXByb3RvYnVmL2dlbi9nby90cmFkaW5nL3YxO3RyYWRpbmd2MWIGcHJvdG8z");
 
 /**
  * @generated from message trading.v1.Account
@@ -194,6 +194,11 @@ export type Position = Message<"trading.v1.Position"> & {
    * @generated from field: int32 risk_bps = 12;
    */
   riskBps: number;
+
+  /**
+   * @generated from field: string symbol = 13;
+   */
+  symbol: string;
 };
 
 /**
@@ -251,6 +256,11 @@ export type Order = Message<"trading.v1.Order"> & {
    * @generated from field: int64 created_ms = 9;
    */
   createdMs: bigint;
+
+  /**
+   * @generated from field: string symbol = 10;
+   */
+  symbol: string;
 };
 
 /**
@@ -298,6 +308,16 @@ export type Event = Message<"trading.v1.Event"> & {
    * @generated from field: repeated trading.v1.Order orders = 7;
    */
   orders: Order[];
+
+  /**
+   * @generated from field: repeated trading.v1.Closed closed = 8;
+   */
+  closed: Closed[];
+
+  /**
+   * @generated from field: uint32 account_id = 9;
+   */
+  accountId: number;
 };
 
 /**
@@ -306,6 +326,43 @@ export type Event = Message<"trading.v1.Event"> & {
  */
 export const EventSchema: GenMessage<Event> = /*@__PURE__*/
   messageDesc(file_trading_v1_trading, 4);
+
+/**
+ * @generated from message trading.v1.Closed
+ */
+export type Closed = Message<"trading.v1.Closed"> & {
+  /**
+   * @generated from field: uint64 id = 1;
+   */
+  id: bigint;
+
+  /**
+   * @generated from field: int64 close = 2;
+   */
+  close: bigint;
+
+  /**
+   * @generated from field: sint64 profit = 3;
+   */
+  profit: bigint;
+
+  /**
+   * @generated from field: int64 close_ms = 4;
+   */
+  closeMs: bigint;
+
+  /**
+   * @generated from field: uint32 reason = 5;
+   */
+  reason: number;
+};
+
+/**
+ * Describes the message trading.v1.Closed.
+ * Use `create(ClosedSchema)` to create a new message.
+ */
+export const ClosedSchema: GenMessage<Closed> = /*@__PURE__*/
+  messageDesc(file_trading_v1_trading, 5);
 
 /**
  * @generated from enum trading.v1.Status

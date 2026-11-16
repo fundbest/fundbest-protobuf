@@ -317,6 +317,7 @@ type Position struct {
 	Swap          int64                  `protobuf:"zigzag64,10,opt,name=swap,proto3" json:"swap,omitempty"`
 	Commission    int64                  `protobuf:"zigzag64,11,opt,name=commission,proto3" json:"commission,omitempty"`
 	RiskBps       int32                  `protobuf:"varint,12,opt,name=risk_bps,json=riskBps,proto3" json:"risk_bps,omitempty"`
+	Symbol        string                 `protobuf:"bytes,13,opt,name=symbol,proto3" json:"symbol,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -435,6 +436,13 @@ func (x *Position) GetRiskBps() int32 {
 	return 0
 }
 
+func (x *Position) GetSymbol() string {
+	if x != nil {
+		return x.Symbol
+	}
+	return ""
+}
+
 type Order struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            uint64                 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -446,6 +454,7 @@ type Order struct {
 	Sl            int64                  `protobuf:"varint,7,opt,name=sl,proto3" json:"sl,omitempty"`
 	Tp            int64                  `protobuf:"varint,8,opt,name=tp,proto3" json:"tp,omitempty"`
 	CreatedMs     int64                  `protobuf:"varint,9,opt,name=created_ms,json=createdMs,proto3" json:"created_ms,omitempty"`
+	Symbol        string                 `protobuf:"bytes,10,opt,name=symbol,proto3" json:"symbol,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -543,6 +552,13 @@ func (x *Order) GetCreatedMs() int64 {
 	return 0
 }
 
+func (x *Order) GetSymbol() string {
+	if x != nil {
+		return x.Symbol
+	}
+	return ""
+}
+
 type Event struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Seq           uint64                 `protobuf:"varint,1,opt,name=seq,proto3" json:"seq,omitempty"`
@@ -552,6 +568,8 @@ type Event struct {
 	Metrics       *Metrics               `protobuf:"bytes,5,opt,name=metrics,proto3" json:"metrics,omitempty"`
 	Positions     []*Position            `protobuf:"bytes,6,rep,name=positions,proto3" json:"positions,omitempty"`
 	Orders        []*Order               `protobuf:"bytes,7,rep,name=orders,proto3" json:"orders,omitempty"`
+	Closed        []*Closed              `protobuf:"bytes,8,rep,name=closed,proto3" json:"closed,omitempty"`
+	AccountId     uint32                 `protobuf:"varint,9,opt,name=account_id,json=accountId,proto3" json:"account_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -635,6 +653,96 @@ func (x *Event) GetOrders() []*Order {
 	return nil
 }
 
+func (x *Event) GetClosed() []*Closed {
+	if x != nil {
+		return x.Closed
+	}
+	return nil
+}
+
+func (x *Event) GetAccountId() uint32 {
+	if x != nil {
+		return x.AccountId
+	}
+	return 0
+}
+
+type Closed struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            uint64                 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Close         int64                  `protobuf:"varint,2,opt,name=close,proto3" json:"close,omitempty"`
+	Profit        int64                  `protobuf:"zigzag64,3,opt,name=profit,proto3" json:"profit,omitempty"`
+	CloseMs       int64                  `protobuf:"varint,4,opt,name=close_ms,json=closeMs,proto3" json:"close_ms,omitempty"`
+	Reason        uint32                 `protobuf:"varint,5,opt,name=reason,proto3" json:"reason,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *Closed) Reset() {
+	*x = Closed{}
+	mi := &file_trading_v1_trading_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *Closed) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Closed) ProtoMessage() {}
+
+func (x *Closed) ProtoReflect() protoreflect.Message {
+	mi := &file_trading_v1_trading_proto_msgTypes[5]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Closed.ProtoReflect.Descriptor instead.
+func (*Closed) Descriptor() ([]byte, []int) {
+	return file_trading_v1_trading_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *Closed) GetId() uint64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+func (x *Closed) GetClose() int64 {
+	if x != nil {
+		return x.Close
+	}
+	return 0
+}
+
+func (x *Closed) GetProfit() int64 {
+	if x != nil {
+		return x.Profit
+	}
+	return 0
+}
+
+func (x *Closed) GetCloseMs() int64 {
+	if x != nil {
+		return x.CloseMs
+	}
+	return 0
+}
+
+func (x *Closed) GetReason() uint32 {
+	if x != nil {
+		return x.Reason
+	}
+	return 0
+}
+
 var File_trading_v1_trading_proto protoreflect.FileDescriptor
 
 const file_trading_v1_trading_proto_rawDesc = "" +
@@ -665,7 +773,7 @@ const file_trading_v1_trading_proto_rawDesc = "" +
 	"\x06dd_bps\x18\x03 \x01(\x05R\x05ddBps\x12\x1b\n" +
 	"\tdaily_bps\x18\x04 \x01(\x05R\bdailyBps\x12\x1d\n" +
 	"\n" +
-	"profit_bps\x18\x05 \x01(\x11R\tprofitBps\"\x8d\x02\n" +
+	"profit_bps\x18\x05 \x01(\x11R\tprofitBps\"\xa5\x02\n" +
 	"\bPosition\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x04R\x02id\x12\x1b\n" +
 	"\tsymbol_id\x18\x02 \x01(\rR\bsymbolId\x12\x10\n" +
@@ -681,7 +789,8 @@ const file_trading_v1_trading_proto_rawDesc = "" +
 	"\n" +
 	"commission\x18\v \x01(\x12R\n" +
 	"commission\x12\x19\n" +
-	"\brisk_bps\x18\f \x01(\x05R\ariskBps\"\xc3\x01\n" +
+	"\brisk_bps\x18\f \x01(\x05R\ariskBps\x12\x16\n" +
+	"\x06symbol\x18\r \x01(\tR\x06symbol\"\xdb\x01\n" +
 	"\x05Order\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x04R\x02id\x12\x1b\n" +
 	"\tsymbol_id\x18\x02 \x01(\rR\bsymbolId\x12\x10\n" +
@@ -692,7 +801,9 @@ const file_trading_v1_trading_proto_rawDesc = "" +
 	"\x02sl\x18\a \x01(\x03R\x02sl\x12\x0e\n" +
 	"\x02tp\x18\b \x01(\x03R\x02tp\x12\x1d\n" +
 	"\n" +
-	"created_ms\x18\t \x01(\x03R\tcreatedMs\"\x87\x02\n" +
+	"created_ms\x18\t \x01(\x03R\tcreatedMs\x12\x16\n" +
+	"\x06symbol\x18\n" +
+	" \x01(\tR\x06symbol\"\xd2\x02\n" +
 	"\x05Event\x12\x10\n" +
 	"\x03seq\x18\x01 \x01(\x04R\x03seq\x12\x13\n" +
 	"\x05ts_ms\x18\x02 \x01(\x03R\x04tsMs\x12\x1a\n" +
@@ -700,7 +811,16 @@ const file_trading_v1_trading_proto_rawDesc = "" +
 	"\aaccount\x18\x04 \x01(\v2\x13.trading.v1.AccountR\aaccount\x12-\n" +
 	"\ametrics\x18\x05 \x01(\v2\x13.trading.v1.MetricsR\ametrics\x122\n" +
 	"\tpositions\x18\x06 \x03(\v2\x14.trading.v1.PositionR\tpositions\x12)\n" +
-	"\x06orders\x18\a \x03(\v2\x11.trading.v1.OrderR\x06orders*\x82\x01\n" +
+	"\x06orders\x18\a \x03(\v2\x11.trading.v1.OrderR\x06orders\x12*\n" +
+	"\x06closed\x18\b \x03(\v2\x12.trading.v1.ClosedR\x06closed\x12\x1d\n" +
+	"\n" +
+	"account_id\x18\t \x01(\rR\taccountId\"y\n" +
+	"\x06Closed\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\x04R\x02id\x12\x14\n" +
+	"\x05close\x18\x02 \x01(\x03R\x05close\x12\x16\n" +
+	"\x06profit\x18\x03 \x01(\x12R\x06profit\x12\x19\n" +
+	"\bclose_ms\x18\x04 \x01(\x03R\acloseMs\x12\x16\n" +
+	"\x06reason\x18\x05 \x01(\rR\x06reason*\x82\x01\n" +
 	"\x06Status\x12\x16\n" +
 	"\x12STATUS_UNSPECIFIED\x10\x00\x12\x11\n" +
 	"\rSTATUS_ACTIVE\x10\x01\x12\x11\n" +
@@ -722,7 +842,7 @@ func file_trading_v1_trading_proto_rawDescGZIP() []byte {
 }
 
 var file_trading_v1_trading_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_trading_v1_trading_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
+var file_trading_v1_trading_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_trading_v1_trading_proto_goTypes = []any{
 	(Status)(0),      // 0: trading.v1.Status
 	(*Account)(nil),  // 1: trading.v1.Account
@@ -730,6 +850,7 @@ var file_trading_v1_trading_proto_goTypes = []any{
 	(*Position)(nil), // 3: trading.v1.Position
 	(*Order)(nil),    // 4: trading.v1.Order
 	(*Event)(nil),    // 5: trading.v1.Event
+	(*Closed)(nil),   // 6: trading.v1.Closed
 }
 var file_trading_v1_trading_proto_depIdxs = []int32{
 	0, // 0: trading.v1.Account.status:type_name -> trading.v1.Status
@@ -737,11 +858,12 @@ var file_trading_v1_trading_proto_depIdxs = []int32{
 	2, // 2: trading.v1.Event.metrics:type_name -> trading.v1.Metrics
 	3, // 3: trading.v1.Event.positions:type_name -> trading.v1.Position
 	4, // 4: trading.v1.Event.orders:type_name -> trading.v1.Order
-	5, // [5:5] is the sub-list for method output_type
-	5, // [5:5] is the sub-list for method input_type
-	5, // [5:5] is the sub-list for extension type_name
-	5, // [5:5] is the sub-list for extension extendee
-	0, // [0:5] is the sub-list for field type_name
+	6, // 5: trading.v1.Event.closed:type_name -> trading.v1.Closed
+	6, // [6:6] is the sub-list for method output_type
+	6, // [6:6] is the sub-list for method input_type
+	6, // [6:6] is the sub-list for extension type_name
+	6, // [6:6] is the sub-list for extension extendee
+	0, // [0:6] is the sub-list for field type_name
 }
 
 func init() { file_trading_v1_trading_proto_init() }
@@ -755,7 +877,7 @@ func file_trading_v1_trading_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_trading_v1_trading_proto_rawDesc), len(file_trading_v1_trading_proto_rawDesc)),
 			NumEnums:      1,
-			NumMessages:   5,
+			NumMessages:   6,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
