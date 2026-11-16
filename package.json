@@ -1,12 +1,16 @@
 {
   "name": "@fundbest/protobuf",
-  "version": "1.0.0",
+  "version": "1.5.0",
   "type": "module",
   "sideEffects": false,
   "exports": {
     "./market/v1/market_pb": {
       "types": "./gen/ts/market/v1/market_pb.ts",
       "default": "./gen/ts/market/v1/market_pb.ts"
+    },
+    "./trading/v1/trading_pb": {
+      "types": "./gen/ts/trading/v1/trading_pb.ts",
+      "default": "./gen/ts/trading/v1/trading_pb.ts"
     }
   },
   "files": [
