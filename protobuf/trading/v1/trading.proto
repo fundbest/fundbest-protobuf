@@ -26,8 +26,9 @@ message Account {
   uint32 daily_limit_bps = 10;
   uint32 total_limit_bps = 11;
   uint32 target_bps = 12;
-  bool trailing = 13;
-  bool prop = 14;
+  uint32 position_limit_bps = 13;
+  bool trailing = 14;
+  bool prop = 15;
 }
 
 message Metrics {

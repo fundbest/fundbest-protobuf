@@ -80,23 +80,24 @@ func (Status) EnumDescriptor() ([]byte, []int) {
 }
 
 type Account struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            uint32                 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
-	Status        Status                 `protobuf:"varint,2,opt,name=status,proto3,enum=trading.v1.Status" json:"status,omitempty"`
-	Reason        string                 `protobuf:"bytes,3,opt,name=reason,proto3" json:"reason,omitempty"`
-	Balance       int64                  `protobuf:"zigzag64,4,opt,name=balance,proto3" json:"balance,omitempty"`
-	Initial       int64                  `protobuf:"varint,5,opt,name=initial,proto3" json:"initial,omitempty"`
-	Leverage      uint32                 `protobuf:"varint,6,opt,name=leverage,proto3" json:"leverage,omitempty"`
-	ExpiresMs     int64                  `protobuf:"varint,7,opt,name=expires_ms,json=expiresMs,proto3" json:"expires_ms,omitempty"`
-	Days          uint32                 `protobuf:"varint,8,opt,name=days,proto3" json:"days,omitempty"`
-	MinDays       uint32                 `protobuf:"varint,9,opt,name=min_days,json=minDays,proto3" json:"min_days,omitempty"`
-	DailyLimitBps uint32                 `protobuf:"varint,10,opt,name=daily_limit_bps,json=dailyLimitBps,proto3" json:"daily_limit_bps,omitempty"`
-	TotalLimitBps uint32                 `protobuf:"varint,11,opt,name=total_limit_bps,json=totalLimitBps,proto3" json:"total_limit_bps,omitempty"`
-	TargetBps     uint32                 `protobuf:"varint,12,opt,name=target_bps,json=targetBps,proto3" json:"target_bps,omitempty"`
-	Trailing      bool                   `protobuf:"varint,13,opt,name=trailing,proto3" json:"trailing,omitempty"`
-	Prop          bool                   `protobuf:"varint,14,opt,name=prop,proto3" json:"prop,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	Id               uint32                 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Status           Status                 `protobuf:"varint,2,opt,name=status,proto3,enum=trading.v1.Status" json:"status,omitempty"`
+	Reason           string                 `protobuf:"bytes,3,opt,name=reason,proto3" json:"reason,omitempty"`
+	Balance          int64                  `protobuf:"zigzag64,4,opt,name=balance,proto3" json:"balance,omitempty"`
+	Initial          int64                  `protobuf:"varint,5,opt,name=initial,proto3" json:"initial,omitempty"`
+	Leverage         uint32                 `protobuf:"varint,6,opt,name=leverage,proto3" json:"leverage,omitempty"`
+	ExpiresMs        int64                  `protobuf:"varint,7,opt,name=expires_ms,json=expiresMs,proto3" json:"expires_ms,omitempty"`
+	Days             uint32                 `protobuf:"varint,8,opt,name=days,proto3" json:"days,omitempty"`
+	MinDays          uint32                 `protobuf:"varint,9,opt,name=min_days,json=minDays,proto3" json:"min_days,omitempty"`
+	DailyLimitBps    uint32                 `protobuf:"varint,10,opt,name=daily_limit_bps,json=dailyLimitBps,proto3" json:"daily_limit_bps,omitempty"`
+	TotalLimitBps    uint32                 `protobuf:"varint,11,opt,name=total_limit_bps,json=totalLimitBps,proto3" json:"total_limit_bps,omitempty"`
+	TargetBps        uint32                 `protobuf:"varint,12,opt,name=target_bps,json=targetBps,proto3" json:"target_bps,omitempty"`
+	PositionLimitBps uint32                 `protobuf:"varint,13,opt,name=position_limit_bps,json=positionLimitBps,proto3" json:"position_limit_bps,omitempty"`
+	Trailing         bool                   `protobuf:"varint,14,opt,name=trailing,proto3" json:"trailing,omitempty"`
+	Prop             bool                   `protobuf:"varint,15,opt,name=prop,proto3" json:"prop,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
 }
 
 func (x *Account) Reset() {
@@ -209,6 +210,13 @@ func (x *Account) GetTotalLimitBps() uint32 {
 func (x *Account) GetTargetBps() uint32 {
 	if x != nil {
 		return x.TargetBps
+	}
+	return 0
+}
+
+func (x *Account) GetPositionLimitBps() uint32 {
+	if x != nil {
+		return x.PositionLimitBps
 	}
 	return 0
 }
@@ -748,7 +756,7 @@ var File_trading_v1_trading_proto protoreflect.FileDescriptor
 const file_trading_v1_trading_proto_rawDesc = "" +
 	"\n" +
 	"\x18trading/v1/trading.proto\x12\n" +
-	"trading.v1\"\x9a\x03\n" +
+	"trading.v1\"\xc8\x03\n" +
 	"\aAccount\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\rR\x02id\x12*\n" +
 	"\x06status\x18\x02 \x01(\x0e2\x12.trading.v1.StatusR\x06status\x12\x16\n" +
@@ -764,9 +772,10 @@ const file_trading_v1_trading_proto_rawDesc = "" +
 	" \x01(\rR\rdailyLimitBps\x12&\n" +
 	"\x0ftotal_limit_bps\x18\v \x01(\rR\rtotalLimitBps\x12\x1d\n" +
 	"\n" +
-	"target_bps\x18\f \x01(\rR\ttargetBps\x12\x1a\n" +
-	"\btrailing\x18\r \x01(\bR\btrailing\x12\x12\n" +
-	"\x04prop\x18\x0e \x01(\bR\x04prop\"\x8c\x01\n" +
+	"target_bps\x18\f \x01(\rR\ttargetBps\x12,\n" +
+	"\x12position_limit_bps\x18\r \x01(\rR\x10positionLimitBps\x12\x1a\n" +
+	"\btrailing\x18\x0e \x01(\bR\btrailing\x12\x12\n" +
+	"\x04prop\x18\x0f \x01(\bR\x04prop\"\x8c\x01\n" +
 	"\aMetrics\x12\x16\n" +
 	"\x06equity\x18\x01 \x01(\x12R\x06equity\x12\x16\n" +
 	"\x06margin\x18\x02 \x01(\x12R\x06margin\x12\x15\n" +
